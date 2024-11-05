@@ -4,11 +4,11 @@ output "vpc_id" {
 }
 
 # Output for the public subnets IDs
-output "public_subnets_ids" {
+output "public_subnets" {
   value = [aws_subnet.avila-cli-vpc-subnet-public-01, aws_subnet.avila-cli-vpc-subnet-public-02]
 }
 
 # Output for the private subnets IDs
-output "private_subnets_ids" {
+output "private_subnets" {
   value = [aws_subnet.avila-cli-vpc-subnet-private-01, aws_subnet.avila-cli-vpc-subnet-private-02]
 }
