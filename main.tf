@@ -7,11 +7,18 @@ terraform {
   }
 }
 
-# Configure the AWS Provider
 provider "aws" {
   region = "us-east-1"
 }
 
 module "vpc" {
-  source = "./vpc"
+  source = "./modules/vpc"
+}
+
+module "instances" {
+  source = "./modules/instances"
+
+  vpc_id          = module.vpc.vpc_id
+  public_subnets  = module.vpc.public_subnets
+  private_subnets = module.vpc.private_subnets
 }
