@@ -3,9 +3,17 @@ variable "vpc_id" {
 }
 
 variable "public_subnets" {
-  type = list(object)
+  type = list(object({
+    id                    = string
+    vpc_id                = string
+    cidr_block            = string
+  }))
 }
 
 variable "private_subnets" {
-  type = list(object)
+  type = list(object({
+    id                    = string
+    vpc_id                = string
+    cidr_block            = string
+  }))
 }
