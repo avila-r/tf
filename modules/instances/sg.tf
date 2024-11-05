@@ -1,7 +1,7 @@
 resource "aws_security_group" "avila-cli-public-instance-sg" {
   vpc_id      = var.vpc_id
-  name        = "http-access"
-  description = "HTTP access for avila-cli-public-instance"
+  name        = "avila-cli-public-instance-sg"
+  description = "Security group for avila-cli-public-instance"
 
   ingress {
     protocol    = "tcp"
