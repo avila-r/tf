@@ -3,6 +3,10 @@ resource "aws_instance" "avila-cli-public-instance" {
   ami           = "ami-06b21ccaeff8cd686"
   instance_type = "t2.micro"
 
+  vpc_security_group_ids = [
+    aws_security_group.avila-cli-public-instance-sg.id
+  ]
+
   subnet_id                   = var.public_subnets[0].id
   associate_public_ip_address = true # Assign a public IP
 
