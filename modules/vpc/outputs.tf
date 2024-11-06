@@ -1,6 +1,6 @@
 # Output for the VPC ID
-output "vpc_id" {
-  value = aws_vpc.avila-cli-vpc.id
+output "vpc" {
+  value = aws_vpc.avila-cli-vpc
 }
 
 # Output for the public subnets IDs
