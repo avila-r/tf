@@ -18,7 +18,7 @@ module "vpc" {
 module "instances" {
   source = "./modules/instances"
 
-  vpc             = module.vpc.vpc
+  vpc             = module.vpc.main_vpc
   public_subnets  = module.vpc.public_subnets
   private_subnets = module.vpc.private_subnets
 }

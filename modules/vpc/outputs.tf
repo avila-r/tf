@@ -1,5 +1,5 @@
 # Output for the VPC ID
-output "vpc" {
+output "main_vpc" {
   value = aws_vpc.avila-cli-vpc
 }
 
