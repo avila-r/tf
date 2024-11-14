@@ -1,3 +1,10 @@
+terraform {
+  required_version = "~> 1.0.0"
+
+  required_providers {
+  }
+}
+
 provider "aws" {
   region = "us-east-1"
 }
