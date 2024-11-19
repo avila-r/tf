@@ -134,6 +134,17 @@ resource "aws_lb" "instances" {
   internal           = false
 }
 
+resource "aws_lb_listener" "instances" {
+  load_balancer_arn = aws_lb.instances.arn
+  port              = 80
+  protocol          = "HTTP"
+
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.http.arn
+  }
+}
+
 resource "aws_lb_target_group" "http" {
   name     = "${aws_vpc.main.tags["Name"]}-alb-target-group"
   vpc_id   = aws_vpc.main.id
