@@ -31,8 +31,8 @@ resource "aws_instance" "vm" {
     aws_subnet.public_subnets[count.index].availability_zone
   ]
 
-  associate_public_ip_address = true
-  key_name                    = aws_key_pair.main.key_name
+  key_name             = aws_key_pair.main.key_name
+  iam_instance_profile = "ssh-support"
 
   vpc_security_group_ids = [
     aws_security_group.instances.id
